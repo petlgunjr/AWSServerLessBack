@@ -39,7 +39,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:us-east-1:*:*"
+      Resource: "arn:aws:dynamodb:us-east-2:*:*"
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
@@ -67,7 +67,7 @@ functions:
           path: notes/{id}
           method: get
           cors: true
-          authorizer: aws_iam
+          # authorizer: aws_iam
 
   list:
     # Defines an HTTP API endpoint that calls the main function in list.js
@@ -79,7 +79,7 @@ functions:
           path: notes
           method: get
           cors: true
-          authorizer: aws_iam
+          # authorizer: aws_iam
 
   update:
     # Defines an HTTP API endpoint that calls the main function in update.js
@@ -91,7 +91,7 @@ functions:
           path: notes/{id}
           method: put
           cors: true
-          authorizer: aws_iam
+          # authorizer: aws_iam
 
   delete:
     # Defines an HTTP API endpoint that calls the main function in delete.js
@@ -103,7 +103,7 @@ functions:
           path: notes/{id}
           method: delete
           cors: true
-          authorizer: aws_iam
+          # authorizer: aws_iam
 
   billing:
     # Defines an HTTP API endpoint that calls the main function in billing.js
@@ -115,7 +115,7 @@ functions:
           path: billing
           method: post
           cors: true
-          authorizer: aws_iam
+          # authorizer: aws_iam
 
           # Create our resources with separate CloudFormation templates
 resources:
